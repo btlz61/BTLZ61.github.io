@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原神牛逼</title>
+    <style>
+        /* 简单美化，不用改 */
+        body {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 0 20px;
+            font-size: 18px;
+        }
+        button {
+            padding: 8px 16px;
+            margin: 10px 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input {
+            padding: 8px;
+            font-size: 16px;
+            width: 300px;
+        }
+        #hiddenBox {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f5f5f5;
+            display: none; /* 默认隐藏 */
+        }
+    </style>
+</head>
+<body>
+    <h3>hyy好帅</h3>
+    <!-- 交互1：点击弹窗 -->
+    <button onclick="alert('你没急吧')">点击弹祝福语</button>
+
+    <!-- 交互2：输入框提交反馈 -->
+    <div>
+        <p>输入你的名字：</p >
+        <input type="text" id="nameInput" placeholder="请输入名字">
+        <button onclick="showName()">提交</button>
+        <p id="nameResult"></p >
+    </div>
+
+    <!-- 交互3：显示/隐藏内容 -->
+    <button onclick="toggleBox()">点击显示/隐藏内容</button>
+    <div id="hiddenBox">
+    <img src="ysnb.jpg" style="width:300px; height:auto; border-radius:4px;" alt="展示图片">  
+    </div>
+
+    <!-- JavaScript 交互逻辑，核心部分 -->
+    <script>
+        // 输入框提交显示名字
+        function showName() {
+            const name = document.getElementById('nameInput').value;
+            const result = document.getElementById('nameResult');
+            if (name) {
+                result.innerText = `${name}已急哭～`;
+                result.style.color = 'green';
+            } else {
+                result.innerText = '请先输入名字哦～';
+                result.style.color = 'red';
+            }
+        }
+
+        // 显示/隐藏盒子
+        function toggleBox() {
+            const box = document.getElementById('hiddenBox');
+            // 切换显示状态
+            box.style.display = box.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>
